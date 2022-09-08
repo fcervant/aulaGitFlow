@@ -1,0 +1,141 @@
+GIT Flow
+
+[] master (main) : projeto
+        [] hotfix : correções emergenciais, falhas críticas - tb requer versionar + tag
+    [] dev (desenvolvimento)
+        [] feature (funcionalidades) : temporaria
+        [] release (lançamento) : temporária versão 1.0.0, definir uma TAG
+
+
+- mesclar a release com a feature, a feature com a dev e dev com com a master, sempre nesta ordem.
+
+- manter sempre master e dev
+
++++++++++++++++++++++++++
+
+master 1.0.0 | 1.0.1 | 1.0.2
+        hotfix 1.0.1-1 | 1.0.1-2 | 1.0.2-1
+    dev 
+        release > feature 
+
+GitFlow com comandos
+
+git status
+git branch
+
+- Criar branchs temporarios
+
+git checkout -b dev
+
+git checkout -b feature-jogo-parimpar
+
+- criar / ajustar os componentes na feature
+
+git add, commit, push se for enviar para o remoto
+
+- executar o merge
+
+git branch dev
+
+git merge feature-jogo-parimpar
+
+- se testado e aprovado, liberar a release
+git checkout -b release/1.0.0
+
+git merge feature-jogo-parimpar
+
+git checkout master
+
+git merge release/1.0.0
+
+- gerar a tag
+
+git tag 1.0.0
+
+- enviar para git remoto
+
+git push origin
+
+- excluir as branches de release e features, pois já estão incorporadas no projeto master
+
+git branch -d release/1.0.0 feature-jogo-impar
+git push origin --delete release/1.0.0
+git push origin --delete feature-jogo-parimpar
+
+- checar
+
+git push orign 1.0.0
+
+git show 1.0.0 --pretty=oneline
+
+- criando um hotfix
+
+git checkout -b hotfix/1.0.0-1
+
+- realizar os ajustes, efetuar o add e o commit e homologar
+
+git add -A
+
+git commit -m "hotfix 1.0.0-1"
+
+- executar o merge direto na master
+
+git checkout master
+
+git merge hotfix/1.0.0-1
+
+- mesclar então com a dev
+
+git checkout desenvolvimento
+
+git merge hotfix/1.0.0-1
+
+- excluir o hotfix
+
+git branch -d hotfix/1.0.0-1
+
+- atualizar o remoto
+
+git status
+
+git push --set-upstream origin dev // atualizar o dev
+git push --set-upstream origin     // atualizar o master
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GIT Flow
+
+    master (produção)
+            hotfix (correção imediata) ---> quando for urgente
+        dev (desenvolvimento)
+            feature (atividade)      ----> Temporária
+                release (lançamento) ----> Temporária TAG (etiqueta que vc pode usar no commit)
+
+                release é mesclada com feature quando homologado
+            feature é mesclada com dev quando homologado
+        dev é mesclada com master quando homologado
+
+Reproduzir o fluxo de duas formas
+
+1. Com os comandos classicos do GIT (status, add, commit, branch, etc)
+2. Instalar o gitlow e criar um fluxo com seus comandos
+
+https://gitversion.net/docs/learn/branching-strategies/gitflow/examples
+
+Metodologia agil - proxima aula - feedback gitflow / 

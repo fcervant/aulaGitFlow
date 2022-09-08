@@ -1,0 +1,45 @@
+Versionamento
+
+Problemas sobre o desenvolvimento individual
+
+[ ] Falta de capacidade de retornar as versões anteriores
+[ ] Versão não monitorada
+[ ] Demora em achar uma solução em caso de problemas
+
+Problemas  com tabalho em equipe - squads
+
+[ ] Conflitos - mais de um developer trabalhando no mesmo arquivo
+[ ] Bloqueios do arquivo quando alguém está atuando no mesmo
+[ ] Retrabalho 
+
+Solução: monitorar os arquivos e suas alterações.
+
+
+git --version
+
+git
+[ ] tira uma foto instântanea do arquivo
+[ ] armazena uma referencia do arquivo
+[ ] se não existem alterações, não é registrado nada
+[ ] fluxo de momentos do arquivo
+[ ] maioria das ações são locais - não precisa estar online
+[ ] integridade, todas as ações são registradas
+[ ] chaves baseadas em strings de 40 posições - identificador - em hexadecimal
+[ ] armazena dados dos arquivos
+[ ] Repositorio local
+
+Principal a ser lembrado
+
+[ ] Diretorio de trabalho (pasta na sua maquina local)
+[ ] Repositorio git
+[ ] .git: banco de dados compactado com as alterações dos arquivos
+[ ] Staging: área de preparação
+[ ] Comprimisso - commit
+
+Fluxo : modificar o arquivo - adicionar ao staging - comprometer o arquivo - commit
+
+gitHub
+
+[ ] Repositorio remoto
+
+Commits e logs
